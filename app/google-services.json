@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "220002135659",
+    "firebase_url": "https://arboles-23fc8-default-rtdb.firebaseio.com",
+    "project_id": "arboles-23fc8",
+    "storage_bucket": "arboles-23fc8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220002135659:android:fec69396f56c5bd9660b2e",
+        "android_client_info": {
+          "package_name": "com.vertium.arboles"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220002135659-h445attrtpd9de4h74e3l3pkek5un858.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3pO00QuBHmValnVDnfdcKlpfWNKZpYmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220002135659-h445attrtpd9de4h74e3l3pkek5un858.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
