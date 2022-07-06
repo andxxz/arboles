@@ -19,8 +19,12 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btScan, button;
+    private Button btScan, button, btLimpiar;
     private TextView mTextViewData;
+    private TextView Cientifico;
+    private TextView AMax;
+    private TextView Ori;
+    private TextView Link;
     private DatabaseReference mDatabase;
 
     @Override
@@ -29,9 +33,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mTextViewData = (TextView) findViewById(R.id.etResultado);
+        Cientifico = (TextView) findViewById(R.id.Ncientifico);
+        AMax = (TextView) findViewById(R.id.AlturaMaxima);
+        Ori = (TextView) findViewById(R.id.Origen);
+        Link = (TextView) findViewById(R.id.Imagen);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         btScan = (Button) findViewById(R.id.btScan);
         button = (Button) findViewById(R.id.button);
+        btLimpiar = (Button) findViewById(R.id.btLimpiar);
+
 
         btScan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +54,18 @@ public class MainActivity extends AppCompatActivity {
                 integrador.setBeepEnabled(true);
                 integrador.setBarcodeImageEnabled(true);
                 integrador.initiateScan();
+
+            }
+        });
+
+        btLimpiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mTextViewData.setText("");
+                Cientifico.setText("");
+                AMax.setText("");
+                Ori.setText("");
+                Link.setText("");
 
             }
         });
@@ -61,7 +83,14 @@ public class MainActivity extends AppCompatActivity {
                         if (dataSnapshot.exists()){
                             String Nombre = dataSnapshot.child("Nombre").getValue().toString();
                             String Ncientifico = dataSnapshot.child("Ncientifico").getValue().toString();
-                            mTextViewData.setText("El nombre es: " + Nombre + "\nEl nombre cientifico es: " + Ncientifico);
+                            String AlturaMaxima = dataSnapshot.child("AlturaMaxima").getValue().toString();
+                            String Origen = dataSnapshot.child("Origen").getValue().toString();
+                            String Imagen = dataSnapshot.child("Imagen").getValue().toString();
+                            mTextViewData.setText("El nombre es: " + Nombre);
+                            Cientifico.setText("El nombre cientifico es: " + Ncientifico);
+                            AMax.setText("El altura max es: " + AlturaMaxima);
+                            Ori.setText("Su origen es: " + Origen);
+                            Link.setText("Imagenes Arbol:"+ "\n" + Imagen);
                         }
                     }
 
