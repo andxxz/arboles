@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         btScan = (Button) findViewById(R.id.btScan);
         button = (Button) findViewById(R.id.button);
         btLimpiar = (Button) findViewById(R.id.btLimpiar);
+        //holaaaa
 
 
         btScan.setOnClickListener(new View.OnClickListener() {
